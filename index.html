@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buraxılış İmtahan Nəticələri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .form-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>2024/2025-cü tədris ili üçün ümumtəhsil müəssisələrinin məzunları üçün<br>
+    9 mart 2025-ci il tarixində keçirilmiş buraxılış imtahanlarının nəticələri</h1>
+    
+    <div class="form-container">
+        <div class="form-group">
+            <label for="work-number">İş nömrəsini daxil edin</label>
+            <input type="text" id="work-number" placeholder="Növbəti">
+        </div>
+        <button onclick="checkWorkNumber()">Nəticələri göstər</button>
+    </div>
+
+    <script>
+        function checkWorkNumber() {
+            const workNumber = document.getElementById('work-number').value.trim();
+            
+            if (workNumber === '19207368') {
+                // Redirect to site 1
+                window.location.href = 'https://sites.google.com/view/imtahanneticeler/19207368';
+            } else if (workNumber === '19283297') {
+                // Redirect to site 2
+                window.location.href = 'https://sites.google.com/view/imtahanneticeler/19283297';
+            } else {
+                // Redirect to default site for all other inputs
+                window.location.href = 'https://sites.google.com/view/imtahanneticeler/netice';
+            }
+        }
+        
+        // Also check when Enter key is pressed
+        document.getElementById('work-number').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkWorkNumber();
+            }
+        });
+    </script>
+</body>
+</html>
